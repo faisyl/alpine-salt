@@ -1,0 +1,17 @@
+#! /bin/sh
+
+exec 2>&1 
+set -e
+
+umask 022
+
+
+PROGARGS=""
+PROGHOME="/"
+PROGNAME="/usr/bin/salt-minion"
+
+
+export HOME=/root
+
+cd  "${PROGHOME}" &&  exec $PROGNAME $PROGARGS
+
