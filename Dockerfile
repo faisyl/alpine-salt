@@ -10,4 +10,6 @@ RUN chmod a+x /etc/service/salt-minion/run
 RUN curl -o /tmp/salt-2015.2.0rc2.tar.gz https://pypi.python.org/packages/source/s/salt/salt-2015.2.0rc2.tar.gz && \
         tar -C /tmp -zxf /tmp/salt-2015.2.0rc2.tar.gz && \
 	cd /tmp/salt-2015.2.0rc2 && python setup.py install
+	
+CMD ["/sbin/my_init"]
 
