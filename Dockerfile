@@ -1,9 +1,9 @@
-FROM faisyl/alpine-runit:latest
+FROM faisyl/alpine-runit:edge
 
-RUN  apk add python py-msgpack py-yaml py-jinja2 py-pip\
+RUN  apk --update add python py-msgpack py-yaml py-jinja2 py-pip\
      py-requests py-zmq py-crypto py-m2crypto docker && \
-     pip install apache-libcloud
-
+     pip install apache-libcloud && rm -rf /var/cache/apk/*
+     
 ADD salt-minion.runit /etc/service/salt-minion/run
 RUN chmod a+x /etc/service/salt-minion/run
 
