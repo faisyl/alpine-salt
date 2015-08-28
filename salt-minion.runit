@@ -1,5 +1,7 @@
 #! /bin/sh
 
+. /etc/envvars
+
 exec 2>&1 
 set -e
 
