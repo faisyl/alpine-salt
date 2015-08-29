@@ -10,8 +10,8 @@ RUN sed -i 's/#rc_sys=""/rc_sys="lxc"/g' /etc/rc.conf && \
     echo "http://dl-4.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
     echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk --update upgrade && apk add runit  python py-msgpack py-yaml py-jinja2 py-pip\
-    py-requests py-zmq py-crypto py-m2crypto docker py-openssl libzmq py-cryptography py-cffi && \
-    pip install apache-libcloud docker-py url && rm -rf /var/cache/apk/
+    py-requests py-zmq py-crypto py-m2crypto py-openssl libzmq py-cryptography py-cffi && \
+    pip install tornado apache-libcloud docker-py url && rm -rf /var/cache/apk/*
 
 ADD salt-minion.runit /etc/service/salt-minion/run
 RUN chmod a+x /etc/service/salt-minion/run
