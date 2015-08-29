@@ -9,7 +9,7 @@ RUN sed -i 's/#rc_sys=""/rc_sys="lxc"/g' /etc/rc.conf && \
     && chmod a+x /sbin/start_runit && mkdir /etc/service && mkdir /etc/my_init.d && \
     echo "http://dl-4.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
     echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-    apk --update upgrade && apk add runit  python py-msgpack py-yaml py-jinja2 py-pip\
+    apk --update upgrade && apk add runit curl python py-msgpack py-yaml py-jinja2 py-pip\
     py-requests py-zmq py-crypto py-m2crypto py-openssl libzmq py-cryptography py-cffi && \
     pip install tornado apache-libcloud docker-py url && rm -rf /var/cache/apk/*
 
