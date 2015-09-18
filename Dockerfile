@@ -18,7 +18,7 @@ RUN chmod a+x /etc/service/salt-minion/run
 
 RUN curl -o /tmp/salt-2015.8.0.tar.gz https://pypi.python.org/packages/source/s/salt/salt-2015.8.0.tar.gz && \
     tar -C /tmp -zxf /tmp/salt-2015.8.0.tar.gz && \
-    cd /tmp/salt-2015.8.0rc2 && python setup.py install
+    cd /tmp/salt-2015.8.0 && python setup.py install
 	
 CMD ["/sbin/start_runit"]
 
