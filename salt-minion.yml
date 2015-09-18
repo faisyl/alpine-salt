@@ -1,0 +1,18 @@
+salt-minion:
+  image: faisyl/alpine-salt:salt-2015.8.0
+  privileged: true
+  links:
+  - cloud-init
+  labels:
+  - io.rancher.os.scope=system
+  volumes:
+  - /opt/salt:/etc/salt
+  - /opt/data:/data
+  - /var/run/docker.sock:/var/run/docker.sock
+  - /etc/resolv.conf:/etc/host-resolv.conf
+  - /usr/bin/docker:/usr/bin/docker
+  restart: always
+  pid: host
+  ipc: host
+  net: host
+
