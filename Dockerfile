@@ -16,9 +16,9 @@ RUN sed -i 's/#rc_sys=""/rc_sys="lxc"/g' /etc/rc.conf && \
 ADD salt-minion.runit /etc/service/salt-minion/run
 RUN chmod a+x /etc/service/salt-minion/run
 
-RUN curl -o /tmp/salt-2015.8.0.tar.gz https://pypi.python.org/packages/source/s/salt/salt-2015.8.0.tar.gz && \
-    tar -C /tmp -zxf /tmp/salt-2015.8.0.tar.gz && \
-    cd /tmp/salt-2015.8.0 && python setup.py install
+RUN curl -o /tmp/salt-2015.8.1.tar.gz https://pypi.python.org/packages/source/s/salt/salt-2015.8.1.tar.gz && \
+    tar -C /tmp -zxf /tmp/salt-2015.8.1.tar.gz && \
+    cd /tmp/salt-2015.8.1 && python setup.py install
 	
 CMD ["/sbin/start_runit"]
 
